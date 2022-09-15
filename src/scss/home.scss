@@ -1,0 +1,198 @@
+//====================================================================================================
+.page {
+    position: relative;
+}
+////================  Aside  =========================
+.social-block {
+    position: absolute;
+    position: fixed;
+    top: 367px;
+    right: 36px;
+    width: 21px;
+    height: 158px;
+    z-index: 5;
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: rem(32);
+        align-items: center;
+        justify-content: center;
+    }
+    &__item {
+        width: 25px;
+        height: 22px;
+        transition: 0.5s all;
+        @media (any-hover: hover){
+            &:hover{
+                scale: 1.2;
+            }
+        }
+    }
+}
+//=====================================================
+
+.main {
+    display: flex;
+    flex-direction: row;
+    padding-top: rem(184);
+    flex-wrap: wrap;
+    @media (max-width: em(1080)){
+          display: flex;
+          flex-direction: column;
+    }
+    &__content {
+        flex: 0 1 50%;
+    }
+    &__slider {
+        flex: 0 1 50%;
+        min-width: 0;
+        @media (max-width: em(1080)){
+              width: 100%;
+        }
+    }
+    // Создаем голубой прямоугольник 
+    &__container {
+        &:before{
+            background: #BDCCFF;
+            content: "";
+            position: absolute;
+            width: 200%;
+            top: 0;
+            left: 68%;
+            height: 100%;
+            @media (max-width: em(1080)){
+                  display: none;
+            }
+        }
+    }
+}
+.content-main {
+    &__descr {
+        @include adaptiveValue("margin-right", 68, 40);
+    }
+}
+.descr-content-main {
+    &__subtitle {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 29px;
+        color: #FF9900;
+    }
+    &__title {
+        margin-top: rem(24);
+        font-weight: 800;
+        @include adaptiveValue("font-size", 54, 40);
+        line-height: 73px;
+        color: #000000;
+    }
+    &__text {
+        margin-top: rem(24);
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+        color: #31353B;
+    }
+}
+.form-main {
+    position: relative;
+    margin-right: -188px;// чтобы кнопка залезла на слайдер
+    margin-top: rem(48);
+    display: flex;
+    height: 86px;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222), 0px 20px 13px rgba(0, 0, 0, 0.015), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222);
+    background: url(../img/input_icon.svg) 30px 50% no-repeat;// картинка в виде бекграунда в инпуте
+    z-index: 2;
+    @media (max-width: em(1080)){
+          margin-right: 0px;
+          margin-bottom: rem(20);
+    }
+    &__input {
+        padding: 30px 0px 30px 74px;
+        background-color: transparent;
+        width: 100%;
+        flex: 1 1 auto;
+        border: 1px solid #DADADA;
+        &::placeholder {
+            
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: 0.01em;
+            color: #31353B;
+            opacity: 0.3;
+        }
+    }
+    // меняем цвет инпута при нажатии на поле ввобда 
+    input:focus { 
+        outline: none !important;
+        border-color: #FF9900;
+        box-shadow: 0 0 10px #719ECE;
+    }
+    &__button {
+        width: 188px;
+        flex: 0 0 188px;
+        background: #F85A47;
+        padding: 10px 15px;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+        color: #FFFFFF;
+        transition: 0.5s all;
+        @media (any-hover: hover){
+            &:hover{
+                background: #FF9900;
+            }
+        }
+    }
+}
+// Слайдеор - доп настройки
+.swiper-slide {
+    position: relative;
+	padding-bottom: 95%;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.partners-block {
+    margin-top: rem(15);
+    display: flex;
+    flex-direction: column;
+    &__title {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+        color: #31353B;
+        @media (max-width:$mobile){
+             text-align: center; 
+        }
+    }
+    &__items {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin-top: rem(40);
+        align-items: center;
+        flex-wrap: wrap;
+        @media (max-width:$mobile){
+             justify-content: center;
+             align-items: center; 
+        }
+    }
+}
+
+//========================================================================================================
+//=======================================   Works  =======================================================
+
+//========================================================================================================
+
