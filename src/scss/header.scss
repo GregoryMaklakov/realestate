@@ -1,13 +1,3 @@
-//=============================== Animation menu-link ========================================================
-$template-color:#050505;
-$tmpt-bg-clr:#FDF9F8;
-@keyframes border-bottom-animate{ 
-    @for $i from 0 through 100{
-      #{$i}%{
-        border-image:linear-gradient(to right, $template-color $i+0%, white $i + 0%) 0 0 1 0 ;
-      }
-    }
-  }
 
 //====================================================================================================
 .header {
@@ -52,6 +42,9 @@ $tmpt-bg-clr:#FDF9F8;
 		font-size: 23px;
 		line-height: 31px;
         color: #31353B;
+		@media (max-width:$mobile){
+			 font-size: rem(33); 
+		}
 	}
 	&__body {
 		@media (max-width:$mobile){
@@ -99,6 +92,9 @@ $tmpt-bg-clr:#FDF9F8;
 		line-height: 17px;
 		transition: 0.5s all;
 		color: #000000;
+		@media (max-width:$mobile){
+			 font-size: rem(25); 
+		}
 		@media (any-hover: hover){
 			&:hover{
 				border-bottom: 1px solid $tmpt-bg-clr;

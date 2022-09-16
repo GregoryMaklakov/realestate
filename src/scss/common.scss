@@ -1,1 +1,39 @@
 // Заголовки, общие БЄМ блоки и проче...
+.title {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    color: #000000;
+}
+
+.button {
+    width: 200px;
+    background: #F85A47;
+    box-shadow: 0px 100px 80px rgba(248, 90, 71, 0.07), 0px 64.8148px 46.8519px rgba(248, 90, 71, 0.0531481), 0px 38.5185px 25.4815px rgba(248, 90, 71, 0.0425185), 0px 20px 13px rgba(248, 90, 71, 0.035), 0px 8.14815px 6.51852px rgba(248, 90, 71, 0.0274815), 0px 1.85185px 3.14815px rgba(248, 90, 71, 0.0168519);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: rem(22) rem(33);
+    transition: 0.5s all;
+    @media (any-hover: hover){
+        &:hover{
+            background: #FF9900;
+        }
+    }
+}
+//=============================== Animation menu-link & Tabs panigation ========================================================
+
+$template-color:#050505;
+$tmpt-bg-clr:#FDF9F8;
+@keyframes border-bottom-animate{ 
+    @for $i from 0 through 100{
+      #{$i}%{
+        border-image:linear-gradient(to right, $template-color $i+0%, white $i + 0%) 0 0 1 0 ;
+      }
+    }
+  }

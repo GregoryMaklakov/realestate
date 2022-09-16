@@ -11,12 +11,25 @@
     width: 21px;
     height: 158px;
     z-index: 5;
+    @media (max-width: em(1399.98)){
+          top: 100px;
+          position: absolute;
+          right: 10%;
+    }
+    @media (max-width: em(1080)){
+          display: none;
+    }
     &__items {
         display: flex;
         flex-direction: column;
         gap: rem(32);
         align-items: center;
         justify-content: center;
+        @media (max-width: em(1399.98)){
+            display: flex;
+            flex-direction:row;
+            
+      }
     }
     &__item {
         width: 25px;
@@ -59,7 +72,7 @@
             width: 200%;
             top: 0;
             left: 68%;
-            height: 100%;
+            height: 845px;
             @media (max-width: em(1080)){
                   display: none;
             }
@@ -69,6 +82,7 @@
 .content-main {
     &__descr {
         @include adaptiveValue("margin-right", 68, 40);
+        margin-top: rem(40);
     }
 }
 .descr-content-main {
@@ -86,6 +100,9 @@
         @include adaptiveValue("font-size", 54, 40);
         line-height: 73px;
         color: #000000;
+        @media (max-width:$mobile){
+             line-height: 48px; 
+        }
     }
     &__text {
         margin-top: rem(24);
@@ -103,11 +120,16 @@
     display: flex;
     height: 86px;
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222), 0px 20px 13px rgba(0, 0, 0, 0.015), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222);
-    background: url(../img/input_icon.svg) 30px 50% no-repeat;// картинка в виде бекграунда в инпуте
+    background: url(../img/input_icon.svg) 5% 50% no-repeat;// картинка в виде бекграунда в инпуте
     z-index: 2;
     @media (max-width: em(1080)){
           margin-right: 0px;
           margin-bottom: rem(20);
+    }
+    // опускаю кнопку вниз = под инпут
+    @media (max-width:$mobile){
+         display: block; 
+         margin-bottom: rem(106);
     }
     &__input {
         padding: 30px 0px 30px 74px;
@@ -115,10 +137,12 @@
         width: 100%;
         flex: 1 1 auto;
         border: 1px solid #DADADA;
+        @media (max-width:$mobile){
+             @include adaptiveValue("padding-left", 94, 54);
+        }
         &::placeholder {
-            
             font-weight: 400;
-            font-size: 20px;
+            @include adaptiveValue("font-size", 20, 14);
             line-height: 27px;
             letter-spacing: 0.01em;
             color: #31353B;
@@ -147,12 +171,16 @@
                 background: #FF9900;
             }
         }
+        @media (max-width:$mobile){
+             width: 100%; 
+             height: 86px;
+        }
     }
 }
-// Слайдеор - доп настройки
+// Слайдер - доп настройки
 .swiper-slide {
     position: relative;
-	padding-bottom: 95%;
+	padding-bottom: 95%;// высоту задаем процентным падингом => (height)573px / (width)603px = 0,95 или 95%
     img {
         position: absolute;
         top: 0;
@@ -162,6 +190,17 @@
         object-fit: cover;
     }
 }
+
+.swiper-button-prev, .swiper-button-next {
+    transition: 0.5s all;
+    @media (any-hover: hover){
+        &:hover{
+            color:#F85A47;
+        }
+    }
+}
+
+
 
 .partners-block {
     margin-top: rem(15);
@@ -194,5 +233,183 @@
 //========================================================================================================
 //=======================================   Works  =======================================================
 
+.works {
+    @include adaptiveValue("margin-top", 223, 120);
+    &__title {
+        text-align: center;
+    }
+    &__items {
+        margin-top: rem(70);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 40px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: rem(260);
+    }
+}
+
+.item-works {
+    position: relative;
+    &__icon {
+        width: 90px;
+        height: 90px;
+        background: #9672FF;
+        box-shadow: 0px 100px 80px rgba(150, 114, 255, 0.07), 0px 64.8148px 46.8519px rgba(150, 114, 255, 0.0531481), 0px 38.5185px 25.4815px rgba(150, 114, 255, 0.0425185), 0px 20px 13px rgba(150, 114, 255, 0.035), 0px 8.14815px 6.51852px rgba(150, 114, 255, 0.0274815), 0px 1.85185px 3.14815px rgba(150, 114, 255, 0.0168519);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-2 {
+            background: #4DDFFD;
+            &:before{
+                content:'';
+                background-image: url(../img/how/border_2.svg);
+                position: absolute;
+                width: 210px;
+                height: 11px;
+                right: 85%;
+                @media (max-width: em(1155)){
+                      display: none;
+                }
+            }
+        }
+        &-3 {
+            background: #F2B8EC;
+            &:before{
+                content:'';
+                background-image: url(../img/how/border_1.svg);
+                position: absolute;
+                width: 210px;
+                height: 11px;
+                right: 85%;
+                @media (max-width: em(1155)){
+                    display: none;
+              }
+            }
+        }
+    }
+    &__title {
+        margin-top: rem(50);
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+        color: #000000;
+    }
+
+    &__subtitle {
+        margin-top: rem(15);
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        color: #333333;
+    }
+}
+
+//========================================================================================================
+
+//========================================Deals tabs=====================================================
+
+.deals {
+    @include adaptiveValue("margin-top", 223, 120);
+    &__container {
+    }
+
+    &__head {
+    }
+
+    &__tabs {
+    }
+}
+.head-block-deals {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media (max-width:$mobile){
+         flex-direction: column; 
+    }
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: rem(15);
+        max-width: rem(470);
+    }
+    &__subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+    }
+
+    &__btn {
+        height: 65px;
+        padding: 20px;
+        @media (max-width:$mobile){
+            margin-top: 25px;
+            width: 100%; 
+        }
+    }
+}
+.tabs-block {
+    margin-top: rem(50);
+    &__navigation {
+        display: flex;
+        flex-direction: row;
+        @include adaptiveValue("gap", 50, 20);
+        @media (max-width: em(374)){
+             flex-wrap: wrap; 
+             justify-content: center;
+             align-items: center;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        @include adaptiveValue("font-size", 19, 14);
+        @include adaptiveValue("line-height", 26, 20);
+        color: #000000;
+        transition: 0.5s all;
+        border-bottom: 1px solid $tmpt-bg-clr;
+        &:hover{
+            animation:border-bottom-animate 1s forwards;
+        }
+        &._tab-active {
+            color:#F85A47;
+        }
+    }
+    &__content {
+        margin-top: rem(45);
+    }
+    &__body {
+    }
+}
+
+.body-tab {
+
+    &__items {
+        display: flex;
+        flex-direction:row;
+        gap: rem(30);
+        flex-wrap: wrap;
+        @media (max-width:$mobile){
+             align-items: center;
+             justify-content: center; 
+        }
+    }
+    &__item {
+    }
+}
 //========================================================================================================
 
