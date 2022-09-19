@@ -24,6 +24,19 @@ body::after {
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
+	&__close {
+		padding: rem(20) rem(20);
+		position: absolute;
+		right: 15px;
+		top: 10px;
+		transition: 0.5s all;
+		@media (any-hover: hover){
+			&:hover{
+				transform: scale(1.05);
+				color: coral;
+			}
+		}
+	}
 }
 .popup_show {
 	z-index: 150;
