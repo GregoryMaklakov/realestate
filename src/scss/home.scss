@@ -319,7 +319,7 @@
 
 //========================================================================================================
 
-//========================================Deals tabs=====================================================
+//========================================      Deals tab       s=====================================================
 
 .deals {
     @include adaptiveValue("margin-top", 223, 120);
@@ -384,8 +384,6 @@
     &__content {
         margin-top: rem(45);
     }
-    &__body {
-    }
 }
 
 .body-tab {
@@ -403,7 +401,6 @@
     &__item {
         position: relative;
     }
-
     &__options {
         position: absolute;
         top: 14px;
@@ -538,7 +535,6 @@
     margin-top: rem(42);
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    
     @include adaptiveValue("column-gap", 80, 40);
     @include adaptiveValue("row-gap", 40, 20);
     @media (max-width: em(980)){
@@ -553,7 +549,6 @@
         font-size: 17px;
         line-height: 23px;
         color: #000000;
-
     }
 
     &__sub {
@@ -564,7 +559,180 @@
         color: #545A58;
     }
 }
-.button {
+
+//========================================================================================================
+//======================================    Reviews     ==========================================================
+
+
+.rewiews {
+    @include adaptiveValue("margin-top", 190,80);
+    &__title {
+        max-width: 570px;
+        @media (max-width: em(1200)){
+              text-align: center;
+              display: block;
+              margin: 0 auto;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: rem(51);
+        flex-wrap: wrap;
+        @media (max-width: em(1200)){
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+    &__item {
+        max-width: 380px;
+        padding: rem(102) rem(72) rem(52) rem(38);
+        padding-top: rem(102);
+        @include adaptiveValue("padding-right", 72, 38);
+        padding-bottom: rem(52);
+        padding-right: rem(38);
+        border: 1px solid #EBEBEB;
+        border-radius: 10px;
+        transition: 0.5s all;
+        @media (max-width: em(830)){
+            max-width: 100%;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                background: #FFFFFF;
+                box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222), 0px 20px 13px rgba(0, 0, 0, 0.015), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222), 3px 44px 54px rgba(0, 0, 0, 0.08);
+                border: transparent;
+            }
+        }
+    }
+}
+.item-rewiews {
+    &__subtitle {
+        position: relative;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #333333;
+        &:before{
+            content:'';
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 96px;
+            height: 16.36px;
+            background-image: url(../img/review_stars.svg) ;
+        }
+    }
+
+}
+.user-reviews {
+    margin-top: rem(53);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: rem(20);
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        color: #333333;
+    }
+    &__location {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #666666;
+    }
+}
+.partners-block-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: rem(60);
+    @media (max-width: em(1000)){
+         gap: rem(30); 
+    }
+    &__contact {
+        max-width: rem(311);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        @media (max-width: em(1000)){
+            max-width: 100%;
+            text-align: center;
+       }
+        span {
+            text-decoration: underline;
+            color:#2CBDE7;
+        }
+    }
 }
 //========================================================================================================
-//========================================================================================================
+//======================================  Newslatter     ==========================================================
+
+.newslatter {
+    color: #31353B;
+    padding-top: rem(162);
+    &__title {
+        text-align: center;
+        font-size: 45px;
+    }
+    &__subtitle {
+        margin-top: rem(11);
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 144.2%;
+        letter-spacing: 0.02em;
+        color: #31353B;
+        text-align: center;
+    }
+}
+
+.form-news {
+    display: flex;
+    flex-direction: row;
+    max-width: 686px;
+    height: 124px;
+    margin: 0 auto;
+    margin-top: rem(30);
+    background: #FFFFFF;
+    box-shadow: 0px 163px 80px rgba(0, 0, 0, 0.04), 0px 105.648px 46.8519px rgba(0, 0, 0, 0.0303704), 0px 62.7852px 25.4815px rgba(0, 0, 0, 0.0242963), 0px 32.6px 13px rgba(0, 0, 0, 0.02), 0px 13.2815px 6.51852px rgba(0, 0, 0, 0.0157037), 0px 3.01852px 3.14815px rgba(0, 0, 0, 0.00962963);
+    padding: rem(26) rem(30);
+    @media (max-width:$mobile){
+        display: block;
+        height: 144px;
+    }
+    &__input {
+        width: 100%;
+        padding-left: rem(12);
+        &::placeholder {
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 144.2%;
+            letter-spacing: 0.02em;
+            color: #31353B;
+            opacity: 0.2;
+            margin-left: 20px;
+        }
+    }
+    input:focus { 
+        outline: none !important;
+      /*   box-shadow: 0px 163px 80px rgba(0, 0, 0, 0.04), 0px 105.648px 46.8519px rgba(0, 0, 0, 0.0303704), 0px 62.7852px 25.4815px rgba(0, 0, 0, 0.0242963), 0px 32.6px 13px rgba(0, 0, 0, 0.02), 0px 13.2815px 6.51852px rgba(0, 0, 0, 0.0157037), 0px 3.01852px 3.14815px rgba(0, 0, 0, 0.00962963); */
+      border: 1px solid #EBEBEB;
+
+        }
+    &__btn {
+        width: 167px;
+        height: 72px;
+        @media (max-width:$mobile){
+             width: 100%; 
+             margin-top: rem(12);
+        }
+    }
+}
